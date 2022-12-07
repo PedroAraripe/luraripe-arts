@@ -11,4 +11,4 @@ const arts = [];
     })
   });
 
-export default arts;
+module.exports = arts;
