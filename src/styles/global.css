@@ -107,7 +107,7 @@ section li{
 
 .dropdown-up-download {
   background-color: white;
-  margin: 0 0 0 -2rem !important;
+  margin: 0 0 0 -1rem !important;
 }
 
 .dropdown-up-download *:hover {

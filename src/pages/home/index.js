@@ -12,7 +12,7 @@ import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css';
 
 const CardBackground = styled.div`
-    background: ${props => props.backgroundContent ? `url(${props.backgroundContent})` : 'var(--theme-hpink)'};
+    background: ${props => `url(${props.backgroundContent}), var(--theme-lpink)`};
     overflow: hidden;
     border-radius: 10px;
     width: 100%;
@@ -54,6 +54,11 @@ const WrapperCardContentHover = styled.div`
 
     & > .title {
         font-size: 1.5rem;
+        letter-spacing: 0.3rem;
+    }
+    
+    & button {
+        letter-spacing: 0.2rem;
     }
 `;
 
