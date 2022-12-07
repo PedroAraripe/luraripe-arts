@@ -3,6 +3,7 @@
   --theme-hpink: #e878a5;
   --theme-hpurple: #793971;
   --theme-bg-hpurple: hsl(308deg 36% 35% / 60%);
+  --theme-bg-lpurple: hsl(308deg 36% 35% / 30%);
 }
 
 html,body {
@@ -29,7 +30,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media (max-width: 998px) {
+@media (max-width: 991px) {
   .container {
     padding-right: 1.5rem;
     padding-left: 1.5rem;

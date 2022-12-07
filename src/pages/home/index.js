@@ -10,6 +10,7 @@ import styled from "styled-components";
 
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css';
+import CardContentInfos from './components/CardContentInfos';
 
 const CardBackground = styled.div`
     background: ${props => `url(${props.backgroundContent}), var(--theme-lpink)`};
@@ -24,7 +25,7 @@ const CardBackground = styled.div`
     &, & > * {
         transition: all 0.3s;
 
-        @media (min-width: 1280px) {
+        @media (min-width: 992px) {
             transition: all 0.5s;
         }
     } 
@@ -32,8 +33,11 @@ const CardBackground = styled.div`
     & > * {
         height: 100%;
         width: 100%;
-        transform: translateX(-100%);
-        opacity: 0;
+
+        @media (min-width: 992px) {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
     }
 
     &:hover {
@@ -45,20 +49,17 @@ const CardBackground = styled.div`
 `;
 
 const WrapperCardContentHover = styled.div`
-    background-color: var(--theme-bg-hpurple);
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     font-weight: bold;
-
-    & > .title {
-        font-size: 1.5rem;
-        letter-spacing: 0.3rem;
+    
+    @media (min-width: 992px) {
+        background: var(--theme-bg-hpurple);
     }
     
-    & button {
-        letter-spacing: 0.2rem;
+    &:hover {
+        background: var(--theme-bg-hpurple);
     }
 `;
 
@@ -70,62 +71,16 @@ export default function Home () {
             {arts.map((art, index) => {
                 return (
                     <div key={art.id} className='col-lg-4 p-3 mb-3 d-flex flex-column align-items-center justify-content-center'>
-                        <div className=' w-100 d-flex align-items-center justify-content-center'>
+                        <div className=' w-100 d-flex align-items-center flex-column justify-content-center'>
                             <CardBackground index={index} className='d-flex align-items-center' backgroundContent={art.desktop}>
-                                <WrapperCardContentHover className='p-3 p-lg-4'>
-                                    <div className='title'>
-                                        {art.title}
-                                    </div>
-
-                                    <div className="btn-group dropup">
-                                        <button
-                                            type="button"
-                                            className="dropdown-toggle"
-                                            data-bs-toggle="dropdown"
-                                            aria-expanded="false"
-                                            style={{
-                                                background: 'none',
-                                                color: 'white',
-                                                border: 'none',
-                                            }}
-                                        >
-                                            Download
-                                        </button>
-                                        <ul className="dropdown-menu dropdown-up-download" >
-                                            {[
-                                                {
-                                                    title: 'mobile',
-                                                    size:'1687px x 3000px' 
-                                                },
-                                                {
-                                                    title: 'desktop',
-                                                    size:'3000px x 2000px' 
-                                                },
-
-                                            ]
-                                                .map((type, index) => (
-                                                    <li
-                                                        className='dropdown-item text-center'
-                                                        key={index}
-                                                    >
-                                                        <a
-                                                            alt={`download ${type.title}`}
-                                                            href={art[type.title]}
-                                                            className="fw-bold"
-                                                            style={{
-                                                                textDecoration: 'none',
-                                                                color: 'var(--theme-hpurple)'
-                                                            }}
-                                                            download
-                                                        >
-                                                            {type.title}
-                                                        </a>
-                                                    </li>
-                                                ))}
-                                        </ul>
-                                        </div>
+                                <WrapperCardContentHover className=' d-none d-lg-flex p-3 p-lg-4'>
+                                    <CardContentInfos art={art} />
                                 </WrapperCardContentHover>
                             </CardBackground>
+
+                            <div className='d-lg-none w-100 mt-3'>
+                                <CardContentInfos art={art} />
+                            </div>
                         </div>
                     </div>
                 )

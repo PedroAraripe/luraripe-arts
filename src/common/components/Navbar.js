@@ -7,7 +7,6 @@ const NavItem = styled.div`
   text-shadow: 0px 0px ${props => props.isCurrent ? '3px var(--theme-hpurple)' : '1px white'};
   color: ${props => props.isCurrent ? 'var(--theme-hpurple)' : 'white'};
   transition: all 0.2s;
-  font-weight: bold;
 
   &:hover {
     color: var(--theme-hpurple);
@@ -54,7 +53,7 @@ export default function Navbar() {
             key={index}
             style={{textDecoration: 'none'}}
           >
-            <NavItem isCurrent className="script-nav">
+            <NavItem isCurrent className="fw-bold h6 script-nav">
               {route.title}
             </NavItem>
           </NavLink>
@@ -71,7 +70,7 @@ export default function Navbar() {
             // className={`${index ? 'ms-3' : ''}`}
             style={{textDecoration: "none"}}
           >                
-            <NavItem className="script-nav">
+            <NavItem className="fw-bold h6 script-nav">
               {route.title}
             </NavItem>
           </a>
