@@ -67,7 +67,7 @@ export default function Home () {
     const [searchParams] = useSearchParams();
 
     return (
-        <div className="row mb-5">
+        <div className="row mb-5 mt-5 mt-lg-0">
             {arts.map((art, index) => {
                 return (
                     <div key={art.id} className='col-lg-4 p-3 mb-3 d-flex flex-column align-items-center justify-content-center'>

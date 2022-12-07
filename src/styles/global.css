@@ -7,9 +7,18 @@
 }
 
 html,body {
-  background: linear-gradient(175deg, var(--theme-hpink) 3%, #f4bed400 30%), linear-gradient(-5deg, var(--theme-hpink) 3%, var(--theme-lpink) 30%);
+  background: linear-gradient(170deg, var(--theme-hpink) 100px, #f4bed400 200px),
+  linear-gradient(-10deg, var(--theme-hpink) 100px, var(--theme-lpink) 200px);
+
   font-size: 18px;
   font-family: 'Montserrat', sans-serif !important;
+}
+
+@media (min-width: 992px) {
+  html,body {
+    background: linear-gradient(175deg, var(--theme-hpink) 3%, #f4bed400 30%), linear-gradient(-5deg, var(--theme-hpink) 3%, var(--theme-lpink) 30%);
+  }
+  
 }
 
 li {
