@@ -6,54 +6,121 @@ import { getData } from '../../store/scriptsContent';
 import { useSearchParams } from "react-router-dom";
 import arts from "../../content/arts";
 
+import styled from "styled-components";
+
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
+import 'react-loading-skeleton/dist/skeleton.css';
+
+const CardBackground = styled.div`
+    background: ${props => props.backgroundContent ? `url(${props.backgroundContent})` : 'var(--theme-hpink)'};
+    overflow: hidden;
+    border-radius: 10px;
+    width: 100%;
+    aspect-ratio: ${props => props.index % 2 ? '1.5/1' : '1.3/1'};
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &, & > * {
+        transition: all 0.3s;
+
+        @media (min-width: 1280px) {
+            transition: all 0.5s;
+        }
+    } 
+
+    & > * {
+        height: 100%;
+        width: 100%;
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    &:hover {
+        & > * {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+`;
+
+const WrapperCardContentHover = styled.div`
+    background-color: var(--theme-bg-hpurple);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+
+    & > .title {
+        font-size: 1.5rem;
+    }
+`;
 
 export default function Home () {
     const [searchParams] = useSearchParams();
 
-
     return (
         <div className="row mb-5">
             {arts.map((art, index) => {
-                const showMobile = index % 2;
-
                 return (
+                    <div key={art.id} className='col-lg-4 p-3 mb-3 d-flex flex-column align-items-center justify-content-center'>
+                        <div className=' w-100 d-flex align-items-center justify-content-center'>
+                            <CardBackground index={index} className='d-flex align-items-center' backgroundContent={art.desktop}>
+                                <WrapperCardContentHover className='p-3 p-lg-4'>
+                                    <div className='title'>
+                                        {art.title}
+                                    </div>
 
-                    <div key={art.id} className='col-lg-4 mb-5 d-flex flex-column align-items-center justify-content-center'>
-                        <div className='p-lg-4 w-100 d-flex align-items-center justify-content-center'>
-                            <div
-                                className='d-flex align-items-center justify-content-center'
-                                style={{
-                                    background: 'var(--theme-lpink)',
-                                    overflow: 'hidden',
-                                    maxHeight: '400px',
-                                    borderRadius: '10px',
-                                    width: '100%',
-                                    height: 'auto',
-                                    aspectRatio: `${showMobile ? 225 / 337 : 359 / 202}`,
-                                }}
-                            >
-                                <img
-                                    width="300px"
-                                    height="200px"
-                                    className='w-100 img-fluid'
-                                    src={showMobile ? art.mobile : art.desktop}
-                                    alt={`${art.title}`}
-                                    style={{background: 'var(--theme-lpink)'}}
-                                />
-                            </div>
-                        </div>
+                                    <div className="btn-group dropup">
+                                        <button
+                                            type="button"
+                                            className="dropdown-toggle"
+                                            data-bs-toggle="dropdown"
+                                            aria-expanded="false"
+                                            style={{
+                                                background: 'none',
+                                                color: 'white',
+                                                border: 'none',
+                                            }}
+                                        >
+                                            Download
+                                        </button>
+                                        <ul className="dropdown-menu dropdown-up-download" >
+                                            {[
+                                                {
+                                                    title: 'mobile',
+                                                    size:'1687px x 3000px' 
+                                                },
+                                                {
+                                                    title: 'desktop',
+                                                    size:'3000px x 2000px' 
+                                                },
 
-                        <div
-                            className='mt-3 mt-lg-4'
-                            style={{
-                                letterSpacing: '0.1rem',
-                                color: 'var(--theme-hpurple)',
-                                fontWeight: 'bold'
-                            }}
-                        >
-                            {art.title}
+                                            ]
+                                                .map((type, index) => (
+                                                    <li
+                                                        className='dropdown-item text-center'
+                                                        key={index}
+                                                    >
+                                                        <a
+                                                            alt={`download ${type.title}`}
+                                                            href={art[type.title]}
+                                                            className="fw-bold"
+                                                            style={{
+                                                                textDecoration: 'none',
+                                                                color: 'var(--theme-hpurple)'
+                                                            }}
+                                                            download
+                                                        >
+                                                            {type.title}
+                                                        </a>
+                                                    </li>
+                                                ))}
+                                        </ul>
+                                        </div>
+                                </WrapperCardContentHover>
+                            </CardBackground>
                         </div>
                     </div>
                 )

@@ -2,6 +2,7 @@
   --theme-lpink: #f4bed4;
   --theme-hpink: #e878a5;
   --theme-hpurple: #793971;
+  --theme-bg-hpurple: hsl(308deg 36% 35% / 60%);
 }
 
 html,body {
@@ -102,4 +103,13 @@ section li{
     filter: brightness(90%);
     background-size: cover;
     position: relative;
+}
+
+.dropdown-up-download {
+  background-color: white;
+  margin: 0 0 0 -2rem !important;
+}
+
+.dropdown-up-download *:hover {
+  background-color: #e9ecef;
 }
