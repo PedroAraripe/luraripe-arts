@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/arts-showcase/static/css/main.afcbbbe3.css",
+    "main.js": "/arts-showcase/static/js/main.faee96c4.js",
+    "static/media/hello_donut_mobile.png": "/arts-showcase/static/media/hello_donut_mobile.3b9cb22882d9ca5e6986.png",
+    "static/media/hello_donut_desktop.png": "/arts-showcase/static/media/hello_donut_desktop.4c916783448734e8fe7d.png",
+    "index.html": "/arts-showcase/index.html",
+    "main.afcbbbe3.css.map": "/arts-showcase/static/css/main.afcbbbe3.css.map",
+    "main.faee96c4.js.map": "/arts-showcase/static/js/main.faee96c4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.afcbbbe3.css",
+    "static/js/main.faee96c4.js"
+  ]
+}
