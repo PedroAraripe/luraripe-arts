@@ -43,7 +43,7 @@ const CardBackground = styled.div`
     &:hover {
         & > * {
             transform: translateX(0);
-            opacity: 1;
+            opacity: 1; 
         }
     }
 `;
