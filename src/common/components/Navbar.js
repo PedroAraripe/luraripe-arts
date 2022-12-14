@@ -4,15 +4,34 @@ import { NavLink } from 'react-router-dom';
 
 const NavItem = styled.div`
   text-transform: uppercase;
-  text-shadow: 0px 0px ${props => props.isCurrent ? '3px var(--theme-hpurple)' : '1px white'};
+  color: var(--theme-hpurple);
+  transition: all 0.2s;
+  font-size: 1.1rem;
+  letter-spacing: 0.1rem;
+
+  text-shadow: 0px 0px ${props => props.isCurrent ? '0.05rem var(--theme-hpurple)' : '0px'};
   color: ${props => props.isCurrent ? 'var(--theme-hpurple)' : 'white'};
   transition: all 0.2s;
+  font-size: ${props => props.isCurrent ? '1.1rem' : '0.9rem'};
 
   &:hover {
-    color: var(--theme-hpurple);
-    text-shadow: 0px 0px 3px var(--theme-hpurple);
+    color: ${props => props.isCurrent ? 'white' : 'var(--theme-hpurple)'};
+    text-shadow: 0px 0px 0.1rem var(--theme-hpurple);
   }
 `;
+
+// const LogoLuraripeSweep = styled.div`
+//   text-transform: uppercase;
+//   text-shadow: 0px 0px ${props => props.isCurrent ? '3px var(--theme-hpurple)' : '1px white'};
+//   color: ${props => props.isCurrent ? 'var(--theme-hpurple)' : 'white'};
+//   transition: all 0.2s;
+//   font-size: 0.9rem;
+
+//   &:hover {
+//     color: var(--theme-hpurple);
+//     text-shadow: 0px 0px 3px var(--theme-hpurple);
+//   }
+// `;
 
 const routesNav = [
   {
@@ -22,7 +41,7 @@ const routesNav = [
   {
     title: "contact",
     is_external: true,
-    url: "https://www.linkedin.com/in/luraripe-dev/"
+    url: "https://www.linkedin.com/in/Showcase-dev/"
   },
   {
     title: "dev-portfolio",
@@ -37,10 +56,12 @@ const routesNavLocal = routesNav.filter(route => !route.is_external);
 export default function Navbar() {
 
   return (
-    <nav className='container py-2 my-4 d-flex justify-content-center align-items-center'>
+    <nav className='container py-2 my-4 d-flex justify-content-between align-items-center'>
       {/* <div className='d-none d-lg-block'></div> */}
 
       <div className='d-flex'>
+        {/* <LogoLuraripeSweep>Luraripe Showcase</LogoLuraripeSweep> */}
+
         {routesNavLocal.map((route, index) => (
           <NavLink
             to={{
@@ -53,7 +74,7 @@ export default function Navbar() {
             key={index}
             style={{textDecoration: 'none'}}
           >
-            <NavItem isCurrent className="fw-bold h6 script-nav">
+            <NavItem isCurrent className="fw-bold script-nav">
               {route.title}
             </NavItem>
           </NavLink>
@@ -70,7 +91,7 @@ export default function Navbar() {
             // className={`${index ? 'ms-3' : ''}`}
             style={{textDecoration: "none"}}
           >                
-            <NavItem className="fw-bold h6 script-nav">
+            <NavItem className="fw-bold script-nav">
               {route.title}
             </NavItem>
           </a>

@@ -3,8 +3,6 @@ import { createRoot } from 'react-dom/client';
 import styled from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-import { Provider } from 'react-redux';
-import store from './store';
 
 import './styles/global.css';
 
@@ -20,10 +18,8 @@ const root = createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <WrapperContainerX>
-      <Provider store={store}>
           <App />
         <Footer />
-      </Provider>   
     </WrapperContainerX>
   </React.StrictMode>
 );
