@@ -2,17 +2,20 @@ const arts = [
   {
     title: "Pink Donut",
     desktop: require("./images/food/pink_donut_desktop.png"),
-    categories: ["food"]
+    categories: ["food"],
+    mainColorAngle: 308
   },
   {
     title: "Cyan Donut",
     desktop: require("./images/food/cyan_donut_desktop.png"),
-    categories: ["food"]
+    categories: ["food"],
+    mainColorAngle: 195
   },
   {
     title: "Purple Donut",
     desktop: require("./images/food/purple_donut_desktop.png"),
-    categories: ["food"]
+    categories: ["food"],
+    mainColorAngle: 251
   },
 ];
 
