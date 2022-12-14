@@ -6,15 +6,19 @@ const ArtTitle = styled.div`
     color: white;
     color: var(--theme-bg-hpurple);
     text-shadow: 0px 0px 0.05rem var(--theme-hpurple);
+
+    font-weight: bold;
 `;
 
 const DownloadButton = styled.a`
     background: none;
     border: none;
+    
     letter-spacing: 0.2rem;
     color: var(--theme-bg-hpurple);
     text-shadow: 0px 0px 0.05rem var(--theme-hpurple);
-    
+    font-size: 0.8rem;
+
     transition: all 0.2s;
     
     &:hover {
@@ -26,8 +30,8 @@ const DownloadButton = styled.a`
 
 export default function CardContentInfos({art}) {
   return (
-    <div className='w-100 h-100 d-flex flex-column align-items-center align-items-lg-start justify-content-center'>
-      <ArtTitle className='title h5 fw-bold'>
+    <div className='w-100 h-100 d-flex flex-column align-items-start justify-content-center'>
+      <ArtTitle className='title h6'>
           {art.title}
       </ArtTitle>
 

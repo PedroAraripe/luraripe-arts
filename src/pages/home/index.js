@@ -14,7 +14,6 @@ import CardContentInfos from './components/CardContentInfos';
 
 const CardBackground = styled.div`
     background: ${props => `url(${props.backgroundContent}), var(--theme-lpink)`};
-    overflow: hidden;
     border-radius: 10px;
     width: 100%;
     aspect-ratio: 1.5/1;
@@ -26,19 +25,36 @@ const CardBackground = styled.div`
         transition: transform 0.3s;
     } 
 
-    & > * {
-        height: 100%;
-        width: 100%;
-
-        @media (min-width: 992px) {
-            transform: translateX(-100%);
-            opacity: 0;
-        }
-    }
-
     &:hover {
-        transform: rotate(3deg);
+        transform: rotate(-4deg) translateX(0.6rem) translateY(-0.7rem);
     }
+`;
+
+const countLabelColors = [
+    'hsl(308deg 36% 35%)',
+    'hsl(180deg 36% 35%)',
+    'hsl(253deg 36% 35%)',
+    'hsl(0deg 15% 40%)',
+    'hsl(338deg 55% 40%)',
+    // 'hsl( 55deg 70% 70%)',
+    // 'hsl( 105deg 70% 70%)',
+    // 'hsl( 305deg 70% 70%)',
+]
+
+const CountLabel = styled.div`
+    position: relative;
+    left: -12px;
+    top: -12px;
+    
+    font-size: 14px;
+
+    width: 36px;
+    height: 36px;
+
+    background-color: ${() => countLabelColors[Math.floor(Math.random() * (countLabelColors.length))]};
+    color: white;
+
+    border-radius: 50%;
 `;
 
 const WrapperCardContentHover = styled.div`
@@ -65,13 +81,11 @@ export default function Home () {
                 return (
                     <div key={art.id} className='col-lg-4 p-3 mb-5 mb-lg-2 d-flex flex-column align-items-center justify-content-center'>
                         <div className=' w-100 d-flex align-items-center flex-column justify-content-center'>
-                            <CardBackground index={index} className='d-flex align-items-center' backgroundContent={art.desktop}>
-                                {/* <WrapperCardContentHover className=' d-none d-lg-flex p-3 p-lg-4'>
-                                    <CardContentInfos art={art} />
-                                </WrapperCardContentHover> */}
+                            <CardBackground index={index} backgroundContent={art.desktop}>
+                                <CountLabel className='d-flex align-items-center justify-content-center'>{index + 1}</CountLabel>
                             </CardBackground>
 
-                            <div className='w-100 mt-3'>
+                            <div className='w-100 mt-4'>
                                 <CardContentInfos art={art} />
                             </div>
                         </div>
