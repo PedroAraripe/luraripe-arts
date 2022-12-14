@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/luraripe-showcase/static/css/main.0b6637dd.css",
-    "main.js": "/luraripe-showcase/static/js/main.7d9205dc.js",
-    "static/media/cyan_donut_desktop.png": "/luraripe-showcase/static/media/cyan_donut_desktop.5690918769dc3e67b07a.png",
-    "static/media/pink_donut_desktop.png": "/luraripe-showcase/static/media/pink_donut_desktop.84c032f3ba1260c252bb.png",
-    "static/media/purple_donut_desktop.png": "/luraripe-showcase/static/media/purple_donut_desktop.24a25928b8a66d2b74ad.png",
-    "index.html": "/luraripe-showcase/index.html",
-    "main.0b6637dd.css.map": "/luraripe-showcase/static/css/main.0b6637dd.css.map",
-    "main.7d9205dc.js.map": "/luraripe-showcase/static/js/main.7d9205dc.js.map"
+    "main.css": "/luraripe-arts/static/css/main.9d6df97d.css",
+    "main.js": "/luraripe-arts/static/js/main.d17fff71.js",
+    "static/media/cyan_donut_desktop.png": "/luraripe-arts/static/media/cyan_donut_desktop.5690918769dc3e67b07a.png",
+    "static/media/pink_donut_desktop.png": "/luraripe-arts/static/media/pink_donut_desktop.84c032f3ba1260c252bb.png",
+    "static/media/purple_donut_desktop.png": "/luraripe-arts/static/media/purple_donut_desktop.24a25928b8a66d2b74ad.png",
+    "index.html": "/luraripe-arts/index.html",
+    "main.9d6df97d.css.map": "/luraripe-arts/static/css/main.9d6df97d.css.map",
+    "main.d17fff71.js.map": "/luraripe-arts/static/js/main.d17fff71.js.map"
   },
   "entrypoints": [
-    "static/css/main.0b6637dd.css",
-    "static/js/main.7d9205dc.js"
+    "static/css/main.9d6df97d.css",
+    "static/js/main.d17fff71.js"
   ]
 }
