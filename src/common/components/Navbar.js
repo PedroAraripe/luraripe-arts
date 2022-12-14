@@ -9,7 +9,6 @@ const NavItem = styled.div`
   font-size: 1.1rem;
   letter-spacing: 0.1rem;
 
-  text-shadow: 0px 0px ${props => props.isCurrent ? '0.05rem var(--theme-hpurple)' : '0px'};
   color: ${props => props.isCurrent ? 'var(--theme-hpurple)' : 'white'};
   transition: all 0.2s;
   font-size: ${props => props.isCurrent ? '1.1rem' : '0.9rem'};
@@ -56,7 +55,7 @@ const routesNavLocal = routesNav.filter(route => !route.is_external);
 export default function Navbar() {
 
   return (
-    <nav className='container py-2 my-4 d-flex justify-content-between align-items-center'>
+    <nav className='container py-2 my-4 d-flex flex-column-reverse flex-lg-row justify-content-lg-between align-items-lg-center'>
       {/* <div className='d-none d-lg-block'></div> */}
 
       <div className='d-flex'>
@@ -82,12 +81,12 @@ export default function Navbar() {
         }
       </div>
 
-      <div className="d-flex">
+      <div className="d-flex flex-column-reverse flex-lg-row">
         {routesNavExternal.map((route, index) => (
           <a
             key={index}
             href={route.url}
-            className='ms-3'
+            className={index ? 'ms-lg-3' : 'my-3 my-lg-0'}
             // className={`${index ? 'ms-3' : ''}`}
             style={{textDecoration: "none"}}
           >                
