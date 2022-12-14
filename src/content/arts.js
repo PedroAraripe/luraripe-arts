@@ -1,14 +1,31 @@
-const arts = [];
+const arts = [
+  {
+    title: "Pink Donut",
+    desktop: require("./images/food/pink_donut_desktop.png"),
+    categories: ["food"]
+  },
+  {
+    title: "Blue Donut",
+    desktop: require("./images/food/blue_donut_desktop.png"),
+    categories: ["food"]
+  },
+  {
+    title: "Purple Donut",
+    desktop: require("./images/food/purple_donut_desktop.png"),
+    categories: ["food"]
+  },
+];
 
-  [...Array(12).keys()]
-  .forEach((index) => {
-    arts.push({
-      id: index + 1,
-      title: "Hello Donut!",
-      mobile: require("./images/food/hello_donut_mobile.png"),
-      desktop: require("./images/food/hello_donut_desktop.png"),
-      categories: ["food"]
-    })
-  });
+const exposingArts = [];
 
-export default arts;
+for(let i = 0; i < 12; i++) {
+  exposingArts.push(JSON.parse(JSON.stringify(arts[i > 2 ? i%3 : i])));
+}
+
+exposingArts.map((art, i) => {
+  art.id = i + 1;
+
+  return art;
+});
+
+export default exposingArts;
