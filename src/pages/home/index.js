@@ -17,17 +17,13 @@ const CardBackground = styled.div`
     overflow: hidden;
     border-radius: 10px;
     width: 100%;
-    aspect-ratio: ${props => props.index % 2 ? '1.5/1' : '1.3/1'};
+    aspect-ratio: 1.5/1;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 
     &, & > * {
-        transition: all 0.3s;
-
-        @media (min-width: 992px) {
-            transition: all 0.5s;
-        }
+        transition: transform 0.3s;
     } 
 
     & > * {
@@ -41,10 +37,7 @@ const CardBackground = styled.div`
     }
 
     &:hover {
-        & > * {
-            transform: translateX(0);
-            opacity: 1; 
-        }
+        transform: rotate(3deg);
     }
 `;
 
@@ -70,15 +63,15 @@ export default function Home () {
         <div className="row mb-5 mt-5 mt-lg-0">
             {arts.map((art, index) => {
                 return (
-                    <div key={art.id} className='col-lg-4 p-3 mb-3 d-flex flex-column align-items-center justify-content-center'>
+                    <div key={art.id} className='col-lg-4 p-3 mb-5 mb-lg-2 d-flex flex-column align-items-center justify-content-center'>
                         <div className=' w-100 d-flex align-items-center flex-column justify-content-center'>
                             <CardBackground index={index} className='d-flex align-items-center' backgroundContent={art.desktop}>
-                                <WrapperCardContentHover className=' d-none d-lg-flex p-3 p-lg-4'>
+                                {/* <WrapperCardContentHover className=' d-none d-lg-flex p-3 p-lg-4'>
                                     <CardContentInfos art={art} />
-                                </WrapperCardContentHover>
+                                </WrapperCardContentHover> */}
                             </CardBackground>
 
-                            <div className='d-lg-none w-100 mt-3'>
+                            <div className='w-100 mt-3'>
                                 <CardContentInfos art={art} />
                             </div>
                         </div>
