@@ -25,6 +25,19 @@ const DownloadButton = styled.a`
     }
 `;
 
+const ColorPaletteItem = styled.div`
+    background-color: ${props => props.itemPalette};
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: 0.1px solid #00000069;
+    
+    @media (min-width: 992px) {
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+`;
+
 
 export default function CardContentInfos({art}) {
   return (
@@ -36,18 +49,7 @@ export default function CardContentInfos({art}) {
 
             <div className='d-flex'>
                 {art.colorPalette.map((color, index) => (
-                    <div
-                        key={index}
-                        className={`${index ? 'ms-2' : 0}`}
-                        style={{
-                            backgroundColor: color,
-                            width: '25px',
-                            height: '25px',
-                            borderRadius: '50%',
-                            border: '0.1px solid #00000069',
-                        }}
-                    >
-                    </div>
+                    <ColorPaletteItem itemPalette={color}  key={index} className={`${index ? 'ms-2' : 0}`}></ColorPaletteItem>
                 ))}
             </div>
         </div>
@@ -58,7 +60,7 @@ export default function CardContentInfos({art}) {
             style={{
                 textDecoration: 'none',
             }}
-            download={`luraripe_showcase_${art.title.split(" ").join('_')}`.toLowerCase()}
+            download={`luraripe_${art.title.split(" ").join('_')}`.toLowerCase()}
         >
             Download
         </DownloadButton>

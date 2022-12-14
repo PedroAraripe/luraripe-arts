@@ -6,6 +6,7 @@ import CardContentInfos from './components/CardContentInfos';
 
 const CardBackground = styled.div`
     background: ${props => `url(${props.backgroundContent}), hsl(${props.artColorAngle}deg 21% 65%)`};
+    border: 0.1px solid rgba(0, 0, 0, 0.41);
     border-radius: 10px;
     width: 100%;
     aspect-ratio: 1.5/1;
@@ -28,13 +29,14 @@ const CountLabel = styled.div`
     top: -12px;
     
     font-size: 14px;
-
+    
     width: 36px;
     height: 36px;
-
+    
     background-color: ${props => `hsl(${props.colorAngle}deg 36% 35%)`};
     color: white;
-
+    
+    border: 0.1px solid rgba(0, 0, 0, 0.41);
     border-radius: 50%;
 `;
 

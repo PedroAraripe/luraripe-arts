@@ -34,7 +34,7 @@ const NavItem = styled.div`
 
 const routesNav = [
   {
-    title: "all",
+    title: "Home",
     url: "/"
   },
   {
