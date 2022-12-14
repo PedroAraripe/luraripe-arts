@@ -5,8 +5,8 @@ const arts = [
     categories: ["food"]
   },
   {
-    title: "Blue Donut",
-    desktop: require("./images/food/blue_donut_desktop.png"),
+    title: "Cyan Donut",
+    desktop: require("./images/food/cyan_donut_desktop.png"),
     categories: ["food"]
   },
   {
