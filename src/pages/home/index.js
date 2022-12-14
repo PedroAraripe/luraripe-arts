@@ -1,19 +1,11 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import CardContent from '../../common/components/CardContent';
-import { setShowBannerValue } from '../../store/banner';
-import { getData } from '../../store/scriptsContent';
-import { useSearchParams } from "react-router-dom";
+import React from 'react';
 import arts from "../../content/arts";
 
 import styled from "styled-components";
-
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css';
 import CardContentInfos from './components/CardContentInfos';
 
 const CardBackground = styled.div`
-    background: ${props => `url(${props.backgroundContent}), var(--theme-lpink)`};
+    background: ${props => `url(${props.backgroundContent}), hsl(${props.artColorAngle}deg 21% 65%)`};
     border-radius: 10px;
     width: 100%;
     aspect-ratio: 1.5/1;
@@ -47,19 +39,17 @@ const CountLabel = styled.div`
 `;
 
 export default function Home () {
-    const [searchParams] = useSearchParams();
-
     return (
         <div className="row mb-5 mt-5 mt-lg-0">
             {arts.map((art, index) => {
                 return (
-                    <div key={art.id} className='col-lg-4 p-3 mb-5 mb-lg-2 d-flex flex-column align-items-center justify-content-center'>
+                    <div key={art.id} className='col-lg-4 p-3 px-lg-4 mb-4 mb-lg-4 d-flex flex-column align-items-center justify-content-center'>
                         <div className=' w-100 d-flex align-items-center flex-column justify-content-center'>
-                            <CardBackground index={index} backgroundContent={art.desktop}>
+                            <CardBackground index={index} artColorAngle={art.mainColorAngle} backgroundContent={art.desktop}>
                                 <CountLabel colorAngle={art.mainColorAngle} className='d-flex align-items-center justify-content-center'>{index + 1}</CountLabel>
                             </CardBackground>
 
-                            <div className='w-100 mt-4'>
+                            <div className='w-100 mt-3'>
                                 <CardContentInfos art={art} />
                             </div>
                         </div>

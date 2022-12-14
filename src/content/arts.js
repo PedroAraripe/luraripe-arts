@@ -3,19 +3,22 @@ const arts = [
     title: "Pink Donut",
     desktop: require("./images/food/pink_donut_desktop.png"),
     categories: ["food"],
-    mainColorAngle: 308
+    mainColorAngle: 308,
+    colorPalette: ['#bb79b2', '#ae7432', '#cd8fc5']
   },
   {
     title: "Cyan Donut",
     desktop: require("./images/food/cyan_donut_desktop.png"),
     categories: ["food"],
-    mainColorAngle: 195
+    mainColorAngle: 195,
+    colorPalette: ['#89a5af', '#ae7432', '#8fc2ce']
   },
   {
     title: "Purple Donut",
     desktop: require("./images/food/purple_donut_desktop.png"),
     categories: ["food"],
-    mainColorAngle: 251
+    mainColorAngle: 251,
+    colorPalette: ['#a29bbf', '#ae7432', '#885ec9']
   },
 ];
 
