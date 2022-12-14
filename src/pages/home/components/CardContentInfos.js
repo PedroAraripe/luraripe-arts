@@ -30,7 +30,7 @@ export default function CardContentInfos({art}) {
   return (
     <div className='w-100 h-100 d-flex flex-column align-items-start justify-content-center'>
         <div className='d-flex justify-content-between align-items-center w-100 my-2'>
-            <ArtTitle className='title'>
+            <ArtTitle className='title fw-bold'>
                 {art.title}
             </ArtTitle>
 
@@ -57,7 +57,7 @@ export default function CardContentInfos({art}) {
             style={{
                 textDecoration: 'none',
             }}
-            download={`Showcase_${art.title.split(" ").join('_')}`.toLowerCase()}
+            download={`luraripe_showcase_${art.title.split(" ").join('_')}`.toLowerCase()}
         >
             Download
         </DownloadButton>
