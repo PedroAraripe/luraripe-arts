@@ -16,7 +16,8 @@ html,body {
 
 @media (min-width: 992px) {
   html,body {
-    background: linear-gradient(175deg, var(--theme-hpink) 3%, #f4bed400 30%), linear-gradient(-5deg, var(--theme-hpink) 3%, var(--theme-lpink) 30%);
+    background: linear-gradient(177deg, var(--theme-hpink) 100px, #f4bed400 250px),
+    linear-gradient(-3deg, var(--theme-hpink) 100px, var(--theme-lpink) 250px);
   }
   
 }

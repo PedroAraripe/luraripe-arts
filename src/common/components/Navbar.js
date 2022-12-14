@@ -55,7 +55,7 @@ const routesNavLocal = routesNav.filter(route => !route.is_external);
 export default function Navbar() {
 
   return (
-    <nav className='container py-4 py-lg-5 d-flex flex-column-reverse flex-lg-row justify-content-lg-between align-items-lg-center'>
+    <nav className='container p-4 py-lg-5 d-flex flex-column-reverse flex-lg-row justify-content-lg-between align-items-lg-center'>
 
       <div className='d-flex'>
         {routesNavLocal.map((route, index) => (
