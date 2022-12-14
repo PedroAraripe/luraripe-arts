@@ -37,6 +37,7 @@ export default function CardContentInfos({art}) {
             <div className='d-flex'>
                 {art.colorPalette.map((color, index) => (
                     <div
+                        key={index}
                         className={`${index ? 'ms-2' : 0}`}
                         style={{
                             backgroundColor: color,
