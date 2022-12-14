@@ -56,20 +56,15 @@ export default function Navbar() {
 
   return (
     <nav className='container py-2 my-4 d-flex flex-column-reverse flex-lg-row justify-content-lg-between align-items-lg-center'>
-      {/* <div className='d-none d-lg-block'></div> */}
 
       <div className='d-flex'>
-        {/* <LogoLuraripeSweep>Luraripe Showcase</LogoLuraripeSweep> */}
-
         {routesNavLocal.map((route, index) => (
           <NavLink
             to={{
               pathname: "/",
-              // search: `?project_name=${script.repositoryName}`,
               state: { fromDashboard: true }
             }}
             className={`${index ? 'ms-3' : ''}`}
-            // className={({ isActive }) => `${isActive ? 'active-route': ''} ${index !== scriptsNav.length -1 ? 'me-2 me-lg-3' : ''}`}
             key={index}
             style={{textDecoration: 'none'}}
           >
